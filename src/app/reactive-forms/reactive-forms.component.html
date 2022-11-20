@@ -9,8 +9,9 @@
                 <input type="text" formControlName="firstName" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter firstName">
-                <span class="text-danger" *ngIf="((registrationFormControls['firstName'].touched || submittedform) 
-                    && (this.registrationFormControls['firstName'].errors?.['required']))">
+                <span class="text-danger" 
+                  *ngIf="((registrationFormControls['firstName'].touched || submittedform) 
+                    && (registrationFormControls['firstName'].errors?.['required']))">
                     Please enter firstName
                 </span>
             </div>

@@ -1,0 +1,8 @@
+.input-error {
+    /* border: red 1px solid; */
+    @apply ring-2 ring-red-500
+}
+
+.text-red {
+    color: red;
+}

@@ -19,11 +19,11 @@ export class LoginComponentComponent implements OnInit {
     });
   }
 
-  get LoginFormControls() {
+  get loginFormControls() {
     return this.loginForm.controls;
   }
 
   onSubmitLogin() {
-    //console.log(this.LoginFormControls)
+    console.log(this.loginFormControls['email']);
   }
 }
