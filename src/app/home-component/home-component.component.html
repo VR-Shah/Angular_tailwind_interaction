@@ -1,0 +1,46 @@
+<app-header-component >
+
+</app-header-component>
+
+<div>
+  <div class="mx-auto p-4 flex justify-center">
+    <img src="/assets/images/banner.jpg" />
+  </div>
+</div>
+
+<!-- <div class="flex justify-center">
+  <div class="rounded-lg shadow-lg bg-white max-w-sm">
+    <img class="rounded-t-lg" :src="img" alt="" />
+    <div class="p-6">
+      <h5 class="text-gray-900 text-xl font-medium mb-2">{{ title }}</h5>
+      <p class="text-gray-700 text-base mb-4">
+        {{ description }}
+      </p>
+      <button
+        type="button"
+        class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs 
+        leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+      >
+        Button
+      </button>
+
+    </div>
+  </div>
+</div> -->
+<div class="md:container md:mx-auto">
+
+  <div class="flex flex-col item-center md:flex-row gap-8">
+
+    <app-card-component [element]="element" [img]="image1"></app-card-component>
+
+    <app-card-component [element]="element" [img]="image2"></app-card-component>
+
+    <app-card-component [element]="element" [img]="image3"></app-card-component>
+
+    <app-card-component [element]="element" [img]="image4"></app-card-component>
+
+  </div>
+
+</div>
+
+<app-footer-component></app-footer-component>

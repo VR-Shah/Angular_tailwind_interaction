@@ -1,0 +1,87 @@
+<div class="container">
+
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+        <form [formGroup]="registrationForm" (ngSubmit)="submitReactiveForm()">
+            <div class="form-group mb-6">
+                <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-gray-700">
+                    FirstName:
+                </label>
+                <input type="text" formControlName="firstName" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter firstName">
+                <span class="text-danger" *ngIf="((registrationFormControls['firstName'].touched || submittedform) 
+                    && (this.registrationFormControls['firstName'].errors?.['required']))">
+                    Please enter firstName
+                </span>
+            </div>
+
+            <div class="form-group mb-6">
+                <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-gray-700">
+                    Last Name:
+                </label>
+                <input type="text" formControlName="lastName" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter lastName">
+                <span class="text-danger" *ngIf="((registrationFormControls['lastName'].touched || submittedform) 
+                         && (this.registrationFormControls['lastName'].errors?.['required']))">
+                    Please enter lastName
+                </span>
+            </div>
+
+            <div class="form-group mb-6">
+                <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-gray-700">
+                    Email address
+                </label>
+                <input type="email" formControlName="userName" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                
+                <span class="text-danger" *ngIf="((registrationFormControls['userName'].touched || submittedform) 
+                         && (registrationFormControls['userName'].errors?.['required']))">
+                    Please enter userName
+                </span>
+
+                <span class="text-danger" 
+                    *ngIf="(registrationFormControls['userName'].touched && registrationFormControls['userName'].invalid)">
+                    Please enter a valid userName
+                </span>
+            </div>
+
+            <div class="form-group mb-6">
+                <label for="exampleInputPassword1" formControlName="password"
+                    class="form-label inline-block mb-2 text-gray-700">Password</label>
+                <input type="password" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="exampleInputPassword1" placeholder="Please enter a password">
+                
+                <span class="text-danger" *ngIf="((registrationFormControls['password'].touched || submittedform) 
+                    && (registrationFormControls['password'].errors?.['required']))">
+                    Please enter password
+                </span>
+            </div>
+
+            <div class="form-group mb-6">
+                <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">Password</label>
+                <input type="password" formControlName="confirmPassword" class="form-control block w-full px-3 py-1.5 
+                   text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="exampleInputPassword1" placeholder="Please enter confirmPassword">
+
+                <span class="text-danger" *ngIf="((registrationFormControls['confirmPassword'].touched || submittedform) 
+                         && (registrationFormControls['confirmPassword'].errors?.['required']))">
+                    Please enter confirm passwords
+                </span>
+
+                <span class="text-danger"
+                   *ngIf="((registrationFormControls['confirmPassword'].errors?.['confirmedValidator']))">
+                    Passwords and confirm passwords are not matched
+                </span>
+            </div>
+
+            <button type="" class="px-6 py-2.5 bg-blue-600 
+                text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition
+                duration-150 ease-in-out"> Submit
+            </button>
+        </form>
+    </div>
+</div>
