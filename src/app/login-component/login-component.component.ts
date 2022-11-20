@@ -19,7 +19,11 @@ export class LoginComponentComponent implements OnInit {
     });
   }
 
+  get LoginFormControls() {
+    return this.loginForm.controls;
+  }
+
   onSubmitLogin() {
-    
+    //console.log(this.LoginFormControls)
   }
 }

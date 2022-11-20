@@ -6,14 +6,9 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { SignUpComponentComponent } from './sign-up-component/sign-up-component.component';
 
 const appRoutes: Routes = [
-  { 
-    path: '', 
-    children: [
-      { path: '', component: HomeComponentComponent,canActivate: [LoginAuthGuards]  },
-     ]
-  },      
-  { path: 'login', component: LoginComponentComponent },
-  { path: 'signup', component:SignUpComponentComponent }
+  { path:'' ,component:HomeComponentComponent,pathMatch:'full'},
+  { path: 'login', component: LoginComponentComponent,pathMatch:'full' },
+  { path: 'signup', component:SignUpComponentComponent,pathMatch:'full' }
 ];
 
 

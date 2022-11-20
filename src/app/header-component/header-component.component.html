@@ -31,7 +31,6 @@
     <ul class="hidden md:flex space-x-2">
       <li
         *ngFor="let menuItem of menu"
-        (click)="select($event)"
         class="focus:outline-none flex items-center focus:ring-2 
         focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 font-normal 
         text-xs shadow-md rounded"
@@ -69,7 +68,6 @@
 
   <div class="block md:hidden w-full mt-5">
     <div
-      (click)="selectNew()"
       class="cursor-pointer px-4 py-3 text-white bg-primary-600 rounded flex justify-between items-center w-full"
     >
       <div class="flex space-x-2">
@@ -96,15 +94,14 @@
         class="hidden font-normal text-base leading-4 absolute top-2 w-full rounded shadow-md z-20"
       >
         <li
-          *ngFor="let menuItem of menu"
-          (click)="selectedSmall($event)"
           class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none 
-          focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs font-normal focus:text-black"
+          focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs font-normal 
+          focus:text-black"
         >
          <!-- <a (click)="navigateToPage(menuItem.label)"> {{ menuItem.label }} </a>
          -->
-         <a routerLink="/login">Login</a>
-         <a routerLink="/signup">Sign Up</a>
+         <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+         <a [routerLink]="['/signup ']" routerLinkActive="active">Sign Up</a>
         </li>
       </ul>
     </div>
